@@ -7,3 +7,12 @@ function create(id, grade){
     }
   })
 }
+
+`<div id="gradebox">
+  <div id="gradetitle">
+    평점매기기
+  </div>
+  <div id="grade">
+    <span id="gradeleft">&lt;</span><span id="gradescore">5</span><span id="graderight">&gt;</span>
+  </div>
+</div>`
