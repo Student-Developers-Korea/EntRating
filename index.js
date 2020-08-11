@@ -14,5 +14,5 @@ function getcontent(id){
   return b.content
 }
 
-
+import('template.js')
 document.querySelector("body > section > section > div:nth-child(1) > div > div.projectView > div.contentWrapper > div.rightWrapper.ng-scope").innerHTML += template;
