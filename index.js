@@ -1,11 +1,17 @@
-function create(id, grade){
+function create(title, content){
   fetch('https://playentry.org/api/discuss/', {
     method: 'POST',
-    body: `{ "images": [], "category": "avo", "title": "${user.username}/${id}/${grade}", "content": "평점", "groupNotice": false }`,
+    body: `{ "images": [], "category": "avo", "title": "${title}", "content": "${content}", "groupNotice": false }`,
     headers: {
       'Content-Type': 'application/json'
     }
   })
+}
+
+function getcontent(id){
+  var a = await fetch(`https://playentry.org/api/discuss/${id}?noCache=1597130420343&discussId=${id}`)
+  var b = await a.json()
+  return b.content
 }
 
 `<div id="gradebox">
