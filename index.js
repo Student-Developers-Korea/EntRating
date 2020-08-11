@@ -15,4 +15,4 @@ async function getcontent(id){
 }
 
 import('https://student-developers-korea.github.io/EntRating/template.js')
-document.querySelector("body > section > section > div:nth-child(1) > div > div.projectView > div.contentWrapper > div.rightWrapper.ng-scope").innerHTML += template;
+document.querySelector("body > section > section > div:nth-child(1) > div > div.projectView > div.contentWrapper > div.rightWrapper.ng-scope").innerHTML += gradebox;
