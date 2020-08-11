@@ -16,13 +16,13 @@ async function getcontent(id){
 
 function left(){
   if($('#score')[0].innerHTML > 1){
-    $('#score')[0].innerHTML -= 1
+    $('#score')[0].innerHTML = Number($('#score')[0].innerHTML)-1
   }
 }
 
 function right(){
   if($('#score')[0].innerHTML < 5){
-    $('#score')[0].innerHTML += 1
+    $('#score')[0].innerHTML = Number($('#score')[0].innerHTML)+1
   }
 }
 
