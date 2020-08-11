@@ -52,7 +52,7 @@ const template = `<style>
   }
   #score{
     font-size : 20px;
-    padding-top : 5px;
+    padding-top : 3px;
   }
   #ok{
     margin-top : 10px;
