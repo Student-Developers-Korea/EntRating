@@ -40,7 +40,7 @@ const template = `<style>
     width : 30px;
     height : 30px;
     text-align : center;
-    font-size : 20px;
+    font-size : 15px;
     font-weight : bold;
     color : #1C1C1C;
     background-color : #FFB127;
