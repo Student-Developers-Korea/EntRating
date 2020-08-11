@@ -48,6 +48,7 @@ const template = `<style>
     margin-left : 10px;
     margin-right : 10px;
     cursor : pointer;
+    padding-top : 7px;
   }
   #score{
     font-size : 20px;
