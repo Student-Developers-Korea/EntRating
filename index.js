@@ -74,4 +74,4 @@ const template = `<style>
 <div id="ok" onclick="rating()">
   확인
 </div>`;
-console.log(template)
+document.querySelector("body > section > section > div:nth-child(1) > div > div.projectView > div.contentWrapper > div.rightWrapper.ng-scope > div.likeList").innerHTML += template;
