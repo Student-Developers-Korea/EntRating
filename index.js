@@ -27,7 +27,7 @@ const template = `<style>
     background-color : #FFEC33;
     text-align : center;
     height : 41px;
-    font-size : 23px;
+    font-size : 20px;
     padding-top : 9px;
   }
   #grade{
@@ -60,7 +60,7 @@ const template = `<style>
     border-radius : 0 0 15px 15px;
     background-color : #27BEFF;
     text-align : center;
-    font-size : 23px;
+    font-size : 20px;
     padding-top : 9px;
     cursor : pointer;
 </style>
