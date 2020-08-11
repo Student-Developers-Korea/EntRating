@@ -15,13 +15,13 @@ function getcontent(id){
 }
 
 const template = `<style>
-            @font-face {font-family: 'GmarketSansMedium';src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');font-weight: normal;font-style: normal;}
-            
+  @font-face {font-family: 'GmarketSansMedium';src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');font-weight: normal;font-style: normal;}
   #gradebox{
     margin-top : 10px;
     width: 300px;
     background-color : white;
     border : 1px solid #d4d5d5;
+    font-family : 'GmarketSansMedium';
   }
   #gradetitle{
     background-color : #FFEC33;
