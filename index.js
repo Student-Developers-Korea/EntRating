@@ -8,7 +8,7 @@ function create(title, content){
   })
 }
 
-function getcontent(id){
+async function getcontent(id){
   var a = await fetch(`https://playentry.org/api/discuss/${id}?noCache=1597130420343&discussId=${id}`)
   var b = await a.json()
   return b.content
