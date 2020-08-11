@@ -16,6 +16,7 @@ function getcontent(id){
 
 const template = `<style>
   #gradebox{
+    margin-top : 10px;
     width: 300px;
     background-color : white;
     border : 1px solid #d4d5d5;
