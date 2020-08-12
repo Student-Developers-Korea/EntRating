@@ -44,9 +44,22 @@ async function getcomment(id){
 }
 
 async function getall(){
-  var length = await fetch('https://playentry.org/api/discuss/find?commentsNothing=false&sort=created&rows=20&page=1&category=avo&noCache=1570785797940')
-  var length = await length.json()
-  return length.count
+  var length = await fetch('https://playentry.org/api/discuss/find?commentsNothing=false&sort=created&rows=20&page=1&category=dark&noCache=1570785797940')
+  var length = await length.json().count
+  var list = []
+  for(var i=1; i<parseInt(length/20)+1; i++){
+    var a = await fetch(`https://playentry.org/api/discuss/find?commentsNothing=false&sort=created&rows=20&page=1&category=dark&noCache=1570785797940`)
+    var b = await a.json()
+    for(var j=0; j<20; j++){
+      list.push(b.data[j].title)
+    }
+  }
+  var a = await fetch(`https://playentry.org/api/discuss/find?commentsNothing=false&sort=created&rows=20&page=1&category=dark&noCache=1570785797940`)
+  var b = await a.json()
+  for(var j=0; j<length%5; j++){
+    list.push(b.data[j].title)
+  }
+  return list
 }
 
 function left(){
