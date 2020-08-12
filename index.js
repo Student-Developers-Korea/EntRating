@@ -49,13 +49,13 @@ async function getall(){
   var length = length.count
   var list = []
   for(var i=1; i<parseInt(length/20)+1; i++){
-    var a = await fetch(`https://playentry.org/api/discuss/find?commentsNothing=false&sort=created&rows=20&page=1&category=dark&noCache=1570785797940`)
+    var a = await fetch(`https://playentry.org/api/discuss/find?commentsNothing=false&sort=created&rows=20&page=${i}&category=dark&noCache=1570785797940`)
     var b = await a.json()
     for(var j=0; j<20; j++){
       list.push(b.data[j].title)
     }
   }
-  var a = await fetch(`https://playentry.org/api/discuss/find?commentsNothing=false&sort=created&rows=20&page=1&category=dark&noCache=1570785797940`)
+  var a = await fetch(`https://playentry.org/api/discuss/find?commentsNothing=false&sort=created&rows=20&page=${parseInt(length/20)+1}&category=dark&noCache=1570785797940`)
   var b = await a.json()
   for(var j=0; j<length%5; j++){
     list.push(b.data[j].title)
