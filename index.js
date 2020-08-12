@@ -43,6 +43,9 @@ async function getcomment(id){
   return list
 }
 
+function getall(){
+  var length = 
+
 function left(){
   if($('#score')[0].innerHTML > 1){
     $('#score')[0].innerHTML = Number($('#score')[0].innerHTML)-1
