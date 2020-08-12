@@ -55,6 +55,12 @@ function right(){
   }
 }
 
+function rating(){
+  var grade = $('#score')[0].innerHTML
+  if(confirm(`${grade}점을 주시겠습니까?`)==true){
+    
+  }
+}
 const gradebox = `<style>
   @font-face {font-family: 'GmarketSansMedium';src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');font-weight: normal;font-style: normal;}
   #gradebox{
