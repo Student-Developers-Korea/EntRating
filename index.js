@@ -44,18 +44,18 @@ async function getcomment(id){
 }
 
 async function getall(){
-  var length = await fetch('https://playentry.org/api/discuss/find?commentsNothing=false&sort=created&rows=20&page=1&category=dark&noCache=1570785797940')
+  var length = await fetch('https://playentry.org/api/discuss/find?commentsNothing=false&sort=created&rows=20&page=1&category=avo&noCache=1570785797940')
   var length = await length.json()
   var length = length.count
   var list = []
   for(var i=1; i<parseInt(length/20)+1; i++){
-    var a = await fetch(`https://playentry.org/api/discuss/find?commentsNothing=false&sort=created&rows=20&page=${i}&category=dark&noCache=1570785797940`)
+    var a = await fetch(`https://playentry.org/api/discuss/find?commentsNothing=false&sort=created&rows=20&page=${i}&category=avo&noCache=1570785797940`)
     var b = await a.json()
     for(var j=0; j<20; j++){
       list.push(b.data[j].title)
     }
   }
-  var a = await fetch(`https://playentry.org/api/discuss/find?commentsNothing=false&sort=created&rows=20&page=${parseInt(length/20)+1}&category=dark&noCache=1570785797940`)
+  var a = await fetch(`https://playentry.org/api/discuss/find?commentsNothing=false&sort=created&rows=20&page=${parseInt(length/20)+1}&category=avo&noCache=1570785797940`)
   var b = await a.json()
   for(var j=0; j<length%20; j++){
     list.push(b.data[j].title)
@@ -78,7 +78,16 @@ function right(){
 function rating(){
   var grade = $('#score')[0].innerHTML
   if(confirm(`${grade}점을 주시겠습니까?`)==true){
-    
+    getall().then(function(res){
+      if(res.indexOf(Entry.projectId)==-1){
+        create(res, '평점')
+      }
+      var a = res.indexOf(Entry.projectId)
+      var b = await fetch(`https://playentry.org/api/discuss/find?commentsNothing=false&sort=created&rows=20&page=${parseInt(a/20)+1}&category=avo&noCache=1570785797940`)
+      var c = await b.json()
+      var ddd = c.data[a%20]._id
+      comment(grade, ddd)
+    })
   }
 }
 const gradebox = `<style>
