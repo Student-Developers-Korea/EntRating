@@ -37,6 +37,12 @@ async function getcomment(id){
       ulist.push(b[j].user.username)
     }
   }
+  var a = await fetch(`https://playentry.org/api/comment/discuss/list/${id}/${parseInt(length/5)+1}?noCache=1597209869903&targetType=individual`)
+  var b = await a.json()
+  for(var j=0; j<length%5; j++){
+    list.push(b[j].content)
+    ulist.push(b[j].user.username)
+  }
   return list
 }
 
