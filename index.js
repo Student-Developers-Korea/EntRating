@@ -28,28 +28,19 @@ async function getcomment(id){
   var length = await fetch(`https://playentry.org/api/comment/discuss/count/${id}?noCache=1597210182375`)
   var length = await length.json()
   var list = []
-  var ulist = []
   for(var i=1; i<parseInt(length/5)+1; i++){
     var a = await fetch(`https://playentry.org/api/comment/discuss/list/${id}/${i}?noCache=1597209869903&targetType=individual`)
     var b = await a.json()
     for(var j=0; j<5; j++){
       list.push(b[j].content)
-      ulist.push(b[j].user.username)
     }
   }
   var a = await fetch(`https://playentry.org/api/comment/discuss/list/${id}/${parseInt(length/5)+1}?noCache=1597209869903&targetType=individual`)
   var b = await a.json()
   for(var j=0; j<length%5; j++){
     list.push(b[j].content)
-    ulist.push(b[j].user.username)
   }
   return list
-}
-
-async function getcontent(id){
-  var a = await fetch(`https://playentry.org/api/discuss/${id}?noCache=1597130420343&discussId=${id}`)
-  var b = await a.json()
-  return b.content
 }
 
 function left(){
