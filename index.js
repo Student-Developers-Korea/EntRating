@@ -45,7 +45,8 @@ async function getcomment(id){
 
 async function getall(){
   var length = await fetch('https://playentry.org/api/discuss/find?commentsNothing=false&sort=created&rows=20&page=1&category=dark&noCache=1570785797940')
-  var length = await length.json().count
+  var length = await length.json()
+  var length = length.count
   var list = []
   for(var i=1; i<parseInt(length/20)+1; i++){
     var a = await fetch(`https://playentry.org/api/discuss/find?commentsNothing=false&sort=created&rows=20&page=1&category=dark&noCache=1570785797940`)
