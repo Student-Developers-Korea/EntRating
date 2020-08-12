@@ -57,7 +57,7 @@ async function getall(){
   }
   var a = await fetch(`https://playentry.org/api/discuss/find?commentsNothing=false&sort=created&rows=20&page=${parseInt(length/20)+1}&category=dark&noCache=1570785797940`)
   var b = await a.json()
-  for(var j=0; j<length%5; j++){
+  for(var j=0; j<length%20; j++){
     list.push(b.data[j].title)
   }
   return list
