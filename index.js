@@ -96,30 +96,31 @@ function right(){
 
 function rating(){
   var grade = $('#score')[0].innerHTML
-  if(confirm(`${grade}점을 주시겠습니까?`)==true){
-    getall().then(async function(res){
-      if(res.indexOf(Entry.projectId)==-1){
-        create(Entry.projectId, '평점')
-        var a = 0
-        rating()
-        return
-      } else{
-        var a = res.indexOf(Entry.projectId)
-      }
-      console.log(a)
-      var b = await fetch(`https://playentry.org/api/discuss/find?commentsNothing=false&sort=created&rows=20&page=${parseInt(a/20)+1}&category=avo&noCache=1570785797940`)
-      var c = await b.json()
-      console.log(c)
-      var ddd = c.data[a%20]._id
-      console.log(ddd)
-      var ee = await getcommentuser(ddd)
-      if(ee.indexOf(user.username)==-1){
+  getall().then(async function(res){
+    if(res.indexOf(Entry.projectId)==-1){
+      create(Entry.projectId, '평점')
+      var a = 0
+      rating()
+      return
+    } else{
+      var a = res.indexOf(Entry.projectId)
+    }
+    console.log(a)
+    var b = await fetch(`https://playentry.org/api/discuss/find?commentsNothing=false&sort=created&rows=20&page=${parseInt(a/20)+1}&category=avo&noCache=1570785797940`)
+    var c = await b.json()
+    console.log(c)
+    var ddd = c.data[a%20]._id
+    console.log(ddd)
+    var ee = await getcommentuser(ddd)
+    if(ee.indexOf(user.username)==-1){
+      if(confirm(`${grade}점을 주시겠습니까?`)==true){
         comment(grade, ddd)
-      }else{
-        alert('이미 평점을 남겼습니다')
       }
-    })
-  }
+    }else{
+      alert('이미 평점을 남겼습니다')
+    }
+    $('#ok').style.backgroundColor = '#DCDCDC'
+  })
 }
 const gradebox = `<style>
   @font-face {font-family: 'GmarketSansMedium';src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');font-weight: normal;font-style: normal;}
