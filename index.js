@@ -80,7 +80,7 @@ function rating(){
   if(confirm(`${grade}점을 주시겠습니까?`)==true){
     getall().then(function(res){
       if(res.indexOf(Entry.projectId)==-1){
-        create(res, '평점')
+        create(Entry.projectId, '평점')
       }
       var a = res.indexOf(Entry.projectId)
       var b = await fetch(`https://playentry.org/api/discuss/find?commentsNothing=false&sort=created&rows=20&page=${parseInt(a/20)+1}&category=avo&noCache=1570785797940`)
