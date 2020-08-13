@@ -206,6 +206,6 @@ const star = `<style>
   }
 </style>
 <div id="star">4.5 점</div>`
-document.querySelector("body > section > section > section > section > div.allListWrapper > div > div:nth-child(1) > div.projectInfoBox > img").innerHTML = star + document.querySelector("body > section > section > section > section > div.allListWrapper > div > div:nth-child(1) > div.projectInfoBox > img").innerHTML
+document.querySelector("body > section > section > section > section > div.allListWrapper > div > div:nth-child(1) > div.projectInfoBox").innerHTML = star + document.querySelector("body > section > section > section > section > div.allListWrapper > div > div:nth-child(1) > div.projectInfoBox").innerHTML
 document.querySelector("body > section > section > section > section > div.allListWrapper > div > div:nth-child(1) > div.projectInfoBox > img").style.display = 'none'
 
