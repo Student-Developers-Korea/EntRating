@@ -75,7 +75,7 @@ function right(){
   }
 }
 
-function rating(){
+function async rating(){
   var grade = $('#score')[0].innerHTML
   if(confirm(`${grade}점을 주시겠습니까?`)==true){
     getall().then(function(res){
