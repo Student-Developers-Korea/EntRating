@@ -81,8 +81,10 @@ function rating(){
     getall().then(async function(res){
       if(res.indexOf(Entry.projectId)==-1){
         create(Entry.projectId, '평점')
+        var a = 0
+      } else{
+        var a = res.indexOf(Entry.projectId)
       }
-      var a = res.indexOf(Entry.projectId)
       console.log(a)
       var b = await fetch(`https://playentry.org/api/discuss/find?commentsNothing=false&sort=created&rows=20&page=${parseInt(a/20)+1}&category=avo&noCache=1570785797940`)
       var c = await b.json()
