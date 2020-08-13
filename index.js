@@ -88,7 +88,7 @@ function rating(){
       var c = await b.json()
       console.log(c)
       var ddd = c.data[a%20]._id
-      console.log(d)
+      console.log(ddd)
       comment(grade, ddd)
     })
   }
