@@ -120,6 +120,7 @@ function rating(){
       alert('이미 평점을 남겼습니다')
     }
     $('#ok')[0].style.backgroundColor = '#DCDCDC'
+    alert('평점을 남겼습니다')
   })
 }
 const gradebox = `<style>
