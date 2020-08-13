@@ -112,7 +112,12 @@ function rating(){
       console.log(c)
       var ddd = c.data[a%20]._id
       console.log(ddd)
-      comment(grade, ddd)
+      var ee = await getcommentuser(ddd)
+      if(ee.indexOf(user.username)==-1){
+        comment(grade, ddd)
+      }else{
+        alert('이미 평점을 남겼습니다')
+      }
     })
   }
 }
