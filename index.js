@@ -75,10 +75,10 @@ function right(){
   }
 }
 
-async function rating(){
+function rating(){
   var grade = $('#score')[0].innerHTML
   if(confirm(`${grade}점을 주시겠습니까?`)==true){
-    getall().then(function(res){
+    getall().then(async function(res){
       if(res.indexOf(Entry.projectId)==-1){
         create(Entry.projectId, '평점')
       }
