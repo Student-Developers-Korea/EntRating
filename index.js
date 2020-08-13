@@ -82,6 +82,8 @@ function rating(){
       if(res.indexOf(Entry.projectId)==-1){
         create(Entry.projectId, '평점')
         var a = 0
+        rating()
+        return
       } else{
         var a = res.indexOf(Entry.projectId)
       }
