@@ -189,3 +189,23 @@ const gradebox = `<style>
   확인
 </div>`;
 document.querySelector("body > section > section > div:nth-child(1) > div > div.projectView > div.contentWrapper > div.rightWrapper.ng-scope").innerHTML += gradebox;
+
+const star = `<style>
+  #star{
+    width : 75px;
+    height : 35px;
+    background-color : gray;
+    border-radius : 5px;
+    font-size : 20px;
+    font-weight : 600;
+    color : white;
+    text-align : center;
+    padding-top : 5px;
+    float : left;
+    margin : 12px;
+  }
+</style>
+<div id="star">4.5 점</div>`
+document.querySelector("body > section > section > section > section > div.allListWrapper > div > div:nth-child(1) > div.projectInfoBox > img").innerHTML = star + document.querySelector("body > section > section > section > section > div.allListWrapper > div > div:nth-child(1) > div.projectInfoBox > img").innerHTML
+document.querySelector("body > section > section > section > section > div.allListWrapper > div > div:nth-child(1) > div.projectInfoBox > img").style.display = 'none'
+
