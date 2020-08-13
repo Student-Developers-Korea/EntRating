@@ -119,7 +119,7 @@ function rating(){
     }else{
       alert('이미 평점을 남겼습니다')
     }
-    $('#ok').style.backgroundColor = '#DCDCDC'
+    $('#ok')[0].style.backgroundColor = '#DCDCDC'
   })
 }
 const gradebox = `<style>
