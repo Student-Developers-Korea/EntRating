@@ -203,6 +203,7 @@ const star = `<style>
     padding-top : 5px;
     float : left;
     margin : 12px;
+    margin-right : 0;
   }
 </style>
 <div id="star">4.5 점</div>`
