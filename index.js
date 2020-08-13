@@ -83,9 +83,12 @@ function rating(){
         create(Entry.projectId, '평점')
       }
       var a = res.indexOf(Entry.projectId)
+      console.log(a)
       var b = await fetch(`https://playentry.org/api/discuss/find?commentsNothing=false&sort=created&rows=20&page=${parseInt(a/20)+1}&category=avo&noCache=1570785797940`)
       var c = await b.json()
+      console.log(c)
       var ddd = c.data[a%20]._id
+      console.log(d)
       comment(grade, ddd)
     })
   }
