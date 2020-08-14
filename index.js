@@ -123,6 +123,15 @@ function rating(){
     alert('평점을 남겼습니다')
   })
 }
+
+async function getproject(page){
+  var list = []
+  var a = await fetch(`https://playentry.org/api/project/find?blamed=false&isopen=true&option=list&sort=updated&rows=12&page=${page}&role=teacher&noCache=1570787161672`)
+  var b = await a.json()
+  for(var i = 0; i<12; i++){
+    list.push(b.data[i]._id)
+  }
+}
 const gradebox = `<style>
   @font-face {font-family: 'GmarketSansMedium';src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');font-weight: normal;font-style: normal;}
   #gradebox{
