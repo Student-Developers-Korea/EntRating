@@ -137,6 +137,28 @@ async function getproject(page){
 
 $(document).ready(function(){
   if(location.href.split('?')[0]=='https://playentry.org/all#!/'){
+    const star = `<style>
+      #star{
+        width : 75px;
+        height : 35px;
+        background-color : gray;
+        border-radius : 5px;
+        font-size : 20px;
+        font-weight : 600;
+        color : white;
+        text-align : center;
+        padding-top : 5px;
+        float : left;
+        margin : 12px;
+        margin-right : 0;
+      }
+    </style>
+    <div id="star">4.5 점</div>`
+    for(var i = 1; i<13; i++){
+      document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i}) > div.projectInfoBox`).innerHTML = star + document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i}) > div.projectInfoBox`).innerHTML
+      document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i}) > div.projectInfoBox > img`).style.display = 'none'
+    }
+  } else{
     const gradebox = `<style>
       @font-face {font-family: 'GmarketSansMedium';src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');font-weight: normal;font-style: normal;}
       #gradebox{
@@ -203,27 +225,5 @@ $(document).ready(function(){
       확인
     </div>`;
     document.querySelector("body > section > section > div:nth-child(1) > div > div.projectView > div.contentWrapper > div.rightWrapper.ng-scope").innerHTML += gradebox;
-  } else{
-      const star = `<style>
-      #star{
-        width : 75px;
-        height : 35px;
-        background-color : gray;
-        border-radius : 5px;
-        font-size : 20px;
-        font-weight : 600;
-        color : white;
-        text-align : center;
-        padding-top : 5px;
-        float : left;
-        margin : 12px;
-        margin-right : 0;
-      }
-    </style>
-    <div id="star">4.5 점</div>`
-    for(var i = 1; i<13; i++){
-      document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i}) > div.projectInfoBox`).innerHTML = star + document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i}) > div.projectInfoBox`).innerHTML
-      document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i}) > div.projectInfoBox > img`).style.display = 'none'
-    }
   }
 })
