@@ -131,6 +131,7 @@ async function getproject(page){
   for(var i = 0; i<12; i++){
     list.push(b.data[i]._id)
   }
+  return list
 }
 const gradebox = `<style>
   @font-face {font-family: 'GmarketSansMedium';src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');font-weight: normal;font-style: normal;}
