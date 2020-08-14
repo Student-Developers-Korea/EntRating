@@ -137,6 +137,7 @@ async function getproject(page){
 
 $(document).ready(function(){
   if(location.href.split('?')[0]=='https://playentry.org/all#!/'){
+    var a = await getprojectid(Number(location.href.split('&')[2].slice(-1)))
     const star = `<style>
       #star{
         width : 75px;
@@ -153,7 +154,7 @@ $(document).ready(function(){
         margin-right : 0;
       }
     </style>
-    <div id="star">4.5 점</div>`
+    <div id="star"></div>`
     for(var i = 1; i<13; i++){
       document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i}) > div.projectInfoBox`).innerHTML = star + document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i}) > div.projectInfoBox`).innerHTML
       document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i}) > div.projectInfoBox > img`).style.display = 'none'
