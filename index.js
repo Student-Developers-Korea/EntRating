@@ -208,6 +208,6 @@ const star = `<style>
 </style>
 <div id="star">4.5 점</div>`
 for(var i = 1; i<13; i++){
-  document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i}) > div.projectInfoBox`).innerHTML = star + document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(1) > div.projectInfoBox`).innerHTML
+  document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i}) > div.projectInfoBox`).innerHTML = star + document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i}) > div.projectInfoBox`).innerHTML
   document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i}) > div.projectInfoBox > img`).style.display = 'none'
 }
