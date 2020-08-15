@@ -175,7 +175,7 @@ async function start(){
             var c = c+' 점'
             console.log(d)
         }
-      const star = `<style>
+      var star = `<style>
       .star{
         width : 75px;
         height : 35px;
