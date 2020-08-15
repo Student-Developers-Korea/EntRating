@@ -115,12 +115,12 @@ function rating(){
     if(ee.indexOf(user.username)==-1){
       if(confirm(`${grade}점을 주시겠습니까?`)==true){
         comment(grade, ddd)
+        alert('평점을 남겼습니다')
       }
     }else{
       alert('이미 평점을 남겼습니다')
     }
     $('#ok')[0].style.backgroundColor = '#DCDCDC'
-    alert('평점을 남겼습니다')
   })
 }
 
