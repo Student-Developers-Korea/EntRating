@@ -194,7 +194,7 @@ async function start(){
             var c = c+' 점'
             console.log(d)
         }
-      document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i+1}) > div.projectInfoBox`).innerHTML = star1+${d}+star2+${c}+ star3 + document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i+1}) > div.projectInfoBox`).innerHTML
+      document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i+1}) > div.projectInfoBox`).innerHTML = star1+d+star2+c+ star3 + document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i+1}) > div.projectInfoBox`).innerHTML
       document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i+1}) > div.projectInfoBox > img`).style.display = 'none'
      }
   } else{
