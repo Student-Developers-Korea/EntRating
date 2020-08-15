@@ -142,6 +142,20 @@ function mean(list){
   return String(Math.round(re/list.length*10)/10)
 }
 
+function getcolor(num){
+  if(num==5){
+    return '#007BDC'
+  } else if(num>=4){
+    return '#00DC71'
+  } else if(num>=3){
+    return '#FFD23A'
+  } else if(num>=2){
+    return #FF703A'
+  } else {
+    return '#2C2C2C'
+  }
+}
+
 
 async function start(){
   if(location.href.split('?')[0]=='https://playentry.org/all#!/'){
@@ -150,11 +164,13 @@ async function start(){
     for(var i = 0; i<12; i++){
       if(b.indexOf(a[i])==-1){
         var c = '없음'
+        var d = '#CDCDCD'
         console.log(c)
         } else{
             var c = await fetch(`https://playentry.org/api/discuss/find?commentsNothing=false&sort=created&rows=20&page=${parseInt(b.indexOf(a[i])/20)+1}&category=avo&noCache=1570785797940`)
             var c = await c.json()
             var c = mean(await getcomment(c.data[b.indexOf(a[i])%20]._id))+' 점'
+            var d = getcolor(Number(c))
         }
       const star = `<style>
       .star{
