@@ -170,6 +170,7 @@ async function start(){
             var c = await fetch(`https://playentry.org/api/discuss/find?commentsNothing=false&sort=created&rows=20&page=${parseInt(b.indexOf(a[i])/20)+1}&category=avo&noCache=1570785797940`)
             var c = await c.json()
             var c = mean(await getcomment(c.data[b.indexOf(a[i])%20]._id))+' 점'
+            console.log(c)
             var d = getcolor(Number(c))
             console.log(d)
         }
