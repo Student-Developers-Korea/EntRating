@@ -136,7 +136,7 @@ async function getproject(page){
 
 function mean(list){
   var re = 0;
-  for(var i = 0; i<list.length; i++;){
+  for(var i = 0; i<list.length; i++){
     re += Number(list[i])
   }
   return String(Math.round(re/list.length*10)/10)
