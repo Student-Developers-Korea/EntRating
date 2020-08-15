@@ -134,6 +134,14 @@ async function getproject(page){
   return list
 }
 
+function mean(list){
+  var re = 0;
+  for(var i = 0; i<list.length; i++;){
+    re += Number(list[i])
+  }
+  return String(Math.round(re/list.length*10)/10)
+}
+
 
 async function start(){
   if(location.href.split('?')[0]=='https://playentry.org/all#!/'){
@@ -146,11 +154,9 @@ async function start(){
         } else{
             var c = await fetch(`https://playentry.org/api/discuss/find?commentsNothing=false&sort=created&rows=20&page=${parseInt(b.indexOf(a[i])/20)+1}&category=avo&noCache=1570785797940`)
             var c = await c.json()
-            var c = c.data[b.indexOf(a[i])%20]._id 
-            console.log(c)
-         }
-     }
-    const star = `<style>
+            var c = mean(await getcomment(c.data[b.indexOf(a[i])%20]._id))+' 점'
+        }
+      const star = `<style>
       .star{
         width : 75px;
         height : 35px;
@@ -165,12 +171,11 @@ async function start(){
         margin : 12px;
         margin-right : 0;
       }
-    </style>
-    <div class="star"></div>`
-    for(var j = 1; j<13; j++){
-      document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i}) > div.projectInfoBox`).innerHTML = star + document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i}) > div.projectInfoBox`).innerHTML
-      document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i}) > div.projectInfoBox > img`).style.display = 'none'
-    }
+      </style>
+      <div class="star">${c}</div>`
+      document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i+1}) > div.projectInfoBox`).innerHTML = star + document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i+1}) > div.projectInfoBox`).innerHTML
+      document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i+1}) > div.projectInfoBox > img`).style.display = 'none'
+     }
   } else{
     const gradebox = `<style>
       @font-face {font-family: 'GmarketSansMedium';src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');font-weight: normal;font-style: normal;}
