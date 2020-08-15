@@ -145,14 +145,19 @@ function mean(list){
 function getcolor(num){
   if(num==5){
     return '#007BDC'
+    break;
   } else if(num>=4){
     return '#00DC71'
+    break;
   } else if(num>=3){
     return '#FFD23A'
+    break;
   } else if(num>=2){
     return '#FF703A'
+    break;
   } else {
     return '#2C2C2C'
+    break;
   }
 }
 
