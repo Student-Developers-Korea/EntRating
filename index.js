@@ -138,8 +138,18 @@ async function getproject(page){
 $(document).ready(function(){
   if(location.href.split('?')[0]=='https://playentry.org/all#!/'){
     var a = await getprojectid(Number(location.href.split('&')[2].slice(-1)))
+    var b = await getall()
+    for(var i = 0; i<12; i++){
+      if(b.indexOf(a[i])==-1){
+        var c = '없음'
+        } else{
+            var c = await fetch(`https://playentry.org/api/discuss/find?commentsNothing=false&sort=created&rows=20&page=${parseInt(b.indexOf(a[i]/20)+1}&category=avo&noCache=1570785797940`)
+            var c = await c.json()
+            var c = c.data[a%20]._id 
+         }
+     }
     const star = `<style>
-      #star{
+      .star{
         width : 75px;
         height : 35px;
         background-color : gray;
@@ -154,7 +164,7 @@ $(document).ready(function(){
         margin-right : 0;
       }
     </style>
-    <div id="star"></div>`
+    <div class="star"></div>`
     for(var i = 1; i<13; i++){
       document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i}) > div.projectInfoBox`).innerHTML = star + document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i}) > div.projectInfoBox`).innerHTML
       document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i}) > div.projectInfoBox > img`).style.display = 'none'
