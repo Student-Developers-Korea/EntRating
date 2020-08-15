@@ -176,7 +176,7 @@ async function start(){
       .star{
         width : 75px;
         height : 35px;
-        background-color : gray;
+        background-color : ${d};
         border-radius : 5px;
         font-size : 20px;
         font-weight : 600;
