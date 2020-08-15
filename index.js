@@ -171,6 +171,7 @@ async function start(){
             var c = await c.json()
             var c = mean(await getcomment(c.data[b.indexOf(a[i])%20]._id))+' 점'
             var d = getcolor(Number(c))
+            console.log(d)
         }
       const star = `<style>
       .star{
