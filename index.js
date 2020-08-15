@@ -166,7 +166,7 @@ $(document).ready(function(){
       }
     </style>
     <div class="star"></div>`
-    for(var i = 1; i<13; i++){
+    for(var j = 1; j<13; j++){
       document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i}) > div.projectInfoBox`).innerHTML = star + document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i}) > div.projectInfoBox`).innerHTML
       document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i}) > div.projectInfoBox > img`).style.display = 'none'
     }
