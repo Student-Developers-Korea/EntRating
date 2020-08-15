@@ -171,8 +171,9 @@ async function start(){
         float : left;
         margin : 12px;
         margin-right : 0;
+        background-color : 
       `
-  const star2 = `}
+  const star2 = `;}
       </style>
       <div class="star">`
   const star3 = `</div>`
