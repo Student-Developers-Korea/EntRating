@@ -161,7 +161,6 @@ async function start(){
   if(location.href.split('?')[0]=='https://playentry.org/all#!/'){
     var a = await getproject(Number(location.href.split('&')[2].slice(-1)))
     var b = await getall()
-    document.write(`<style> .star{width : 75px; height : 35px; border-radius : 5px; font-size : 20px; font-weight : 600; color : white; text-align : center; padding-top : 5px; float : left; margin : 12px; margin-right : 0;</style>`)
     for(var i = 0; i<12; i++){
       if(b.indexOf(a[i])==-1){
         var c = '없음'
@@ -176,7 +175,7 @@ async function start(){
             var c = c+' 점'
             console.log(d)
         }
-      document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i+1}) > div.projectInfoBox`).innerHTML = `<div class="star" style="background-color : ${d}">${c}</div>`+document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i+1}) > div.projectInfoBox`).innerHTML
+      document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i+1}) > div.projectInfoBox`).innerHTML = `<div class="star" style="width : 75px; height : 35px; border-radius : 5px; font-size : 20px; font-weight : 600; color : white; text-align : center; padding-top : 5px; float : left; margin : 12px; margin-right : 0; background-color : ${d}">${c}</div>`+document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i+1}) > div.projectInfoBox`).innerHTML
       document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i+1}) > div.projectInfoBox > img`).style.display = 'none'
      }
   } else{
