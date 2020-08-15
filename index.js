@@ -192,6 +192,7 @@ async function start(){
       }
       </style>
       <div class="star">${c}</div>`
+      console.log(star)
       document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i+1}) > div.projectInfoBox`).innerHTML = star + document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i+1}) > div.projectInfoBox`).innerHTML
       document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i+1}) > div.projectInfoBox > img`).style.display = 'none'
      }
