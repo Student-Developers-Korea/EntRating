@@ -172,7 +172,7 @@ async function start(){
             var c = mean(await getcomment(c.data[b.indexOf(a[i])%20]._id))
             var d = getcolor(Number(c))
             console.log(c)
-            var c += ' 점'
+            var c = c+' 점'
             console.log(d)
         }
       const star = `<style>
