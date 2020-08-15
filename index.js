@@ -150,7 +150,7 @@ function getcolor(num){
   } else if(num>=3){
     return '#FFD23A'
   } else if(num>=2){
-    return #FF703A'
+    return '#FF703A'
   } else {
     return '#2C2C2C'
   }
