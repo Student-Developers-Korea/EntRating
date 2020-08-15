@@ -135,7 +135,7 @@ async function getproject(page){
 }
 
 
-$(document).ready(function(){
+$(document).ready(async function(){
   if(location.href.split('?')[0]=='https://playentry.org/all#!/'){
     var a = await getprojectid(Number(location.href.split('&')[2].slice(-1)))
     var b = await getall()
