@@ -239,4 +239,6 @@ async function start(){
     </div>`;
     document.querySelector("body > section > section > div:nth-child(1) > div > div.projectView > div.contentWrapper > div.rightWrapper.ng-scope").innerHTML += gradebox;
   }
-})
+}
+
+start()
