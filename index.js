@@ -1,3 +1,4 @@
+console.log(user.username)
 function create(title, content){
   fetch('https://playentry.org/api/discuss/', {
     method: 'POST',
