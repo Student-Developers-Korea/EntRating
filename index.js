@@ -175,6 +175,9 @@ async function start(){
             var c = c+' 점'
             console.log(d)
         }
+      if(document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i+1}) > div.projectInfoBox > div.projectInfoDetail > div.projectInfoOwner.entryEllipsis > span > a`).innerHTML==user.username){
+        document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i+1}) > div.projectInfoBox > div.projectInfoNumbers > img:nth-child(1)`).style.display = 'none'
+      }
       document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i+1}) > div.projectInfoBox`).innerHTML = `<div class="star" style="width : 75px; height : 35px; border-radius : 5px; font-size : 20px; font-weight : 600; color : white; text-align : center; padding-top : 5px; float : left; margin : 12px; margin-right : 0; background-color : ${d}">${c}</div>`+document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i+1}) > div.projectInfoBox`).innerHTML
       document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i+1}) > div.projectInfoBox > img`).style.display = 'none'
      }
