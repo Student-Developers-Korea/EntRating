@@ -14,21 +14,15 @@ function create(title, content){
   })
 }
 
-//이부분은 exte0417님의 EntryBotMaker을 참고하였습니다.
 function comment(content, id){
-  $.ajax({
-    url:"/api/comment",
-    dataType:"json",
-    type:"POST",
-    data:{
-      content: content,
-      target: id,
-      targetSubject: "discuss",
-      targetType: "individual"
+  fetch('https://playentry.org/api/comment',{
+    method : 'POST',
+    body: `{"content": ${content},"target": ${id},"targetSubject": "discuss","targetType": "individual"}`,
+    headers: {
+      'Content-Type': 'application/json'
     }
   })
 }
-//여기까지가 exte0417님 코드를 참고한부분
 
 async function getcomment(id){
   var length = await fetch(`https://playentry.org/api/comment/discuss/count/${id}?noCache=1597210182375`)
