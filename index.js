@@ -125,12 +125,10 @@ function rating(){
   })
 }
 
-async function getproject(page){
+function getproject(page){
   var list = []
-  var a = await fetch(`https://playentry.org/api/project/find?blamed=false&isopen=true&option=list&sort=updated&rows=12&page=${page}&role=teacher&noCache=1570787161672`)
-  var b = await a.json()
   for(var i = 0; i<12; i++){
-    list.push(b.data[i]._id)
+    list.push(document.querySelector(`body > section > section > section > section > div.allListWrapper > div > div:nth-child(${i+1}) > div.projectThumbnailBox`).style.backgroundImage.split('/')[3].split('.')[0])
   }
   return list
 }
@@ -160,7 +158,7 @@ function getcolor(num){
 
 async function start(){
   if(location.href.split('?')[0]=='https://playentry.org/all#!/'){
-    var a = await getproject(Number(location.href.split('&')[2].slice(-1)))
+    var a = getproject(Number(location.href.split('&')[2].slice(-1)))
     var b = await getall()
     for(var i = 0; i<12; i++){
       if(b.indexOf(a[i])==-1){
