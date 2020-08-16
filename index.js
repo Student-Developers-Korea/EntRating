@@ -1,4 +1,9 @@
-console.log(user.username)
+try {
+    console.log(user.username)
+} catch (err) {
+    alert('로그인을 하지 않으면 사용할수없습니다')
+    location.href = 'https://playentry.org'
+}
 function create(title, content){
   fetch('https://playentry.org/api/discuss/', {
     method: 'POST',
