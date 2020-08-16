@@ -17,7 +17,7 @@ function create(title, content){
 function comment(content, id){
   fetch('https://playentry.org/api/comment',{
     method : 'POST',
-    body: `{"content": ${content},"target": ${id},"targetSubject": "discuss","targetType": "individual"}`,
+    body: `{"content": "${content}","target": "${id}","targetSubject": "discuss","targetType": "individual"}`,
     headers: {
       'Content-Type': 'application/json'
     }
