@@ -1,0 +1,10 @@
+{
+    "name": "EntRating",
+    "version": "1.0",
+    "description": "엔트리작품에 평점을 남겨보세요!",
+    "background": {
+      "scripts": ["index.js"],
+      "persistent": false
+    },
+    "manifest_version": 2
+}
