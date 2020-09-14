@@ -4,3 +4,6 @@
 설치코드 : $.get('https://student-developers-korea.github.io/EntRating/index.js')
 
 Jqurey 필요 Zero
+Pure JavaScript
+Made by avocad5
+helped by sorulove and mymsj
