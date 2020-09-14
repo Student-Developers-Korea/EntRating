@@ -6,4 +6,4 @@
 Jqurey 필요 Zero
 Pure JavaScript
 Made by avocad5
-helped by sorulove and mymsj1222 and rav23
+helped by sorulove and SOUP1222 and rav23
